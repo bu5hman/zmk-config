@@ -14,18 +14,22 @@
                 compatible = "zmk,keymap";
 
                 default_layer {
+                        display-name = "Base";
+
 // -----------------------------------------------------------------------------------------
 // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BSPC |
 // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
 // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
 //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
+
                         bindings = <
    &kp ESC   &kp Q      &kp W     &kp F       &kp P       &kp G         &kp J       &kp L       &kp U        &kp Y      &kp SQT      &kp BSPC
-   &kp TAB   &mt LGUI A &mt LALT R &mt LCTRL S &mt LSHFT T &kp D         &kp H       &mt LSHFT N &mt LCTRL E  &mt LALT I  &mt LGUI O   &kp ENT
+   &kp TAB   &mt LGUI A &mt LALT R &mt LCTRL S &mt LSHFT T &kp D        &kp H       &mt LSHFT N &mt LCTRL E  &mt LALT I  &mt LGUI O  &kp ENTER
    &kp CAPS  &kp Z      &kp X     &kp C       &kp V       &kp B         &kp K       &kp M       &kp COMMA    &kp DOT    &kp FSLH     &kp DEL
                                   &none       &mo 4       &lt 5 SPACE   &lt 2 SPACE &mo 1       &mo 3
                         >;
                 };
+
 //                numeric_layer {
 // -----------------------------------------------------------------------------------------
 // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BSPC |
@@ -39,7 +43,7 @@
 //                             &none   &none  &none       &none &none     &none
 //                        >;
 //                };
-
+//
 //                symbol_layer {
 // -----------------------------------------------------------------------------------------
 // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BSPC |
@@ -53,7 +57,7 @@
 //                               &none       &none     &none      &none &none     &none
 //                        >;
 //                };
-                
+//                
 //                 func_layer {
 // -----------------------------------------------------------------------------------------
 // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BSPC |
@@ -67,7 +71,7 @@
 //                          &none  &none  &none  &none &none     &none
 //                        >;
 //                };
-                
+//              
 //                nav_layer {
 // -----------------------------------------------------------------------------------------
 // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BSPC |
@@ -81,7 +85,7 @@
 //                           &none     &none     &none     &none      &none      &none
 //                        >;
 //                };
-                
+//               
 //                mouse_layer {
 // -----------------------------------------------------------------------------------------
 // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BSPC |
