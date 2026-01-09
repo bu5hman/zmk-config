@@ -45,21 +45,21 @@
                              &none   &kp N9 &kp N0      &none &none     &none
                         >;
                 };
-//
-//                symbol_layer {
-//                        display-name = "Symbol";
+
+                symbol_layer {
+                        display-name = "Symbol";
 // -----------------------------------------------------------------------------------------
 // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BSPC |
 // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
 // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
-//                        bindings = <
-//   &trans &kp LBRC  &kp AMPS   &kp ASTRK   &kp LPAR  &kp RBRC   &none &none     &none      &none   &none    &trans
-//   &trans &kp COLON &kp DOLLAR &kp PERCENT &kp CARET &kp PLUS   &none &kp LSHFT &kp LCTRL  &kp LALT &kp LGUI &kp trans
-//   &trans &kp PIPE  &kp EXCL   &kp AT      &kp HASH  &kp UNDER  &none &none     &none      &none   &none    &kp trans
-//                               &none       &none     &none      &none &none     &none
-//                        >;
-//                };
+                        bindings = <
+   &trans &kp LBRC  &kp AMPS   &kp ASTRK   &kp LPAR  &kp RBRC   &none &none     &none      &none   &none    &trans
+   &trans &kp COLON &kp DOLLAR &kp PERCENT &kp CARET &kp PLUS   &none &kp LSHFT &kp LCTRL  &kp LALT &kp LGUI &kp trans
+   &trans &kp PIPE  &kp EXCL   &kp AT      &kp HASH  &kp UNDER  &none &none     &none      &none   &none    &kp trans
+                               &none       &none     &none      &none &none     &none
+                        >;
+                };
 //                
 //                 func_layer {
 //                        display-name = "Function";
