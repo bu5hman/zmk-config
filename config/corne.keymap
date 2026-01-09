@@ -9,6 +9,12 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/pointing.h>
 
+#define L_BAS   0
+#define L_NUM   1
+#define L_SYM   2
+#define L_FUN   3
+#define L_NAV   4
+#define L_MSE   5
 / {
         keymap {
                 compatible = "zmk,keymap";
@@ -23,10 +29,10 @@
 //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
                         bindings = <
-   &kp ESC   &kp Q      &kp W     &kp F       &kp P       &kp G         &kp J       &kp L       &kp U        &kp Y      &kp SQT      &kp BSPC
-   &kp TAB   &mt LGUI A &mt LALT R &mt LCTRL S &mt LSHFT T &kp D        &kp H       &mt LSHFT N &mt LCTRL E  &mt LALT I  &mt LGUI O  &kp ENTER
-   &kp CAPS  &kp Z      &kp X     &kp C       &kp V       &kp B         &kp K       &kp M       &kp COMMA    &kp DOT    &kp FSLH     &kp DEL
-                                  &none       &mo 4       &lt 5 SPACE   &lt 2 SPACE &mo 1       &mo 3
+   &kp ESC   &kp Q      &kp W     &kp F       &kp P       &kp G             &kp J           &kp L           &kp U        &kp Y      &kp SQT      &kp BSPC
+   &kp TAB   &mt LGUI A &mt LALT R &mt LCTRL S &mt LSHFT T &kp D            &kp H           &mt LSHFT N     &mt LCTRL E  &mt LALT I  &mt LGUI O  &kp ENTER
+   &kp CAPS  &kp Z      &kp X     &kp C       &kp V       &kp B             &kp K           &kp M           &kp COMMA    &kp DOT    &kp FSLH     &kp DEL
+                                  &none       &mo L_NAV   &lt L_MSE SPACE   &lt L_SYM SPACE &mo L_NUM       &mo L_FUN
                         >;
                 };
 
@@ -55,8 +61,8 @@
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
    &trans &kp LBRC  &kp AMPS   &kp ASTRK   &kp LPAR  &kp RBRC   &none &none     &none      &none   &none    &trans
-   &trans &kp COLON &kp DOLLAR &kp PERCENT &kp CARET &kp PLUS   &none &kp LSHFT &kp LCTRL  &kp LALT &kp LGUI &kp trans
-   &trans &kp PIPE  &kp EXCL   &kp AT      &kp HASH  &kp UNDER  &none &none     &none      &none   &none    &kp trans
+   &trans &kp COLON &kp DOLLAR &kp PERCENT &kp CARET &kp PLUS   &none &kp LSHFT &kp LCTRL  &kp LALT &kp LGUI &trans
+   &trans &kp PIPE  &kp EXCL   &kp AT      &kp HASH  &kp UNDER  &none &none     &none      &none   &none    &trans
                                &none       &none     &none      &none &none     &none
                         >;
                 };
