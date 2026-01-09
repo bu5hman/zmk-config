@@ -99,20 +99,21 @@
                             &none     &none     &none     &none      &none      &none
                         >;
                 };
-//               
-//                mouse_layer {
-//                        display-name = "Mouse";
+               
+                mouse_layer {
+                        display-name = "Mouse";
 // -----------------------------------------------------------------------------------------
 // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BSPC |
 // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
 // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
-//                        bindings = <
-//   &trans &none    &none    &none     &none     &none &msc UP    &mkp MB1         &mmv MOVE_UP     &mkp MB2          &none &trans
-//   &trans &kp LGUI &kp LALT &kp LCTRL &kp LSHFT &none &msc DOWN  &mmv MOVE_LEFT   &mmv MOVE_DOWN   &mmv MOVE_RIGHT   &none &trans
-//   &trans &none    &none    &none     &none     &none &none      &none            &none            &none             &none &trans
-//                            &none     &none     &none &none      &none            &none
-//                        >;
-//                };
+
+                        bindings = <
+   &trans &none    &none    &none     &none     &none &msc UP    &mkp MB1         &mmv MOVE_UP     &mkp MB2          &none &trans
+   &trans &kp LGUI &kp LALT &kp LCTRL &kp LSHFT &none &msc DOWN  &mmv MOVE_LEFT   &mmv MOVE_DOWN   &mmv MOVE_RIGHT   &none &trans
+   &trans &none    &none    &none     &none     &none &none      &none            &none            &none             &none &trans
+                            &none     &none     &none &none      &none            &none
+                        >;
+                };
         };
 };
