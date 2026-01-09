@@ -66,21 +66,23 @@
                                &none       &none     &none      &none &none     &none
                         >;
                 };
-//                
-//                 func_layer {
-//                        display-name = "Function";
+                
+                 func_layer {
+                        display-name = "Function";
+
 // -----------------------------------------------------------------------------------------
 // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BSPC |
 // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
 // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
-//                        bindings = <
-//   &trans &kp F10  &kp F7 &kp F8 &kp F9 &none  &none &none     &none      &none   &none    &trans
-//   &trans &kp F11  &kp F4 &kp F5 &kp F6 &none  &none &kp LSHFT &kp LCTRL  &kp LALT &kp LGUI &trans
-//   &trans &kp F12  &kp F1 &kp F2 &kp F3 &none  &none &none     &none      &none   &none    &trans
-//                          &none  &none  &none  &none &none     &none
-//                        >;
-//                };
+
+                        bindings = <
+   &trans &kp F10  &kp F7 &kp F8 &kp F9 &none  &none &none     &none      &none   &none    &trans
+   &trans &kp F11  &kp F4 &kp F5 &kp F6 &none  &none &kp LSHFT &kp LCTRL  &kp LALT &kp LGUI &trans
+   &trans &kp F12  &kp F1 &kp F2 &kp F3 &none  &none &none     &none      &none   &none    &trans
+                          &none  &none  &none  &none &none     &none
+                        >;
+                };
 //              
 //                nav_layer {
 //                        display-name = "Navigation";
