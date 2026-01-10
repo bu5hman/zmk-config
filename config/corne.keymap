@@ -5,10 +5,10 @@
  */
 
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/pointing.h>
+#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/pointing.h>
 
 #define L_BAS   0
 #define L_NUM   1
@@ -16,105 +16,111 @@
 #define L_FUN   3
 #define L_NAV   4
 #define L_MSE   5
+
 / {
-        keymap {
-                compatible = "zmk,keymap";
+    keymap {
+        compatible = "zmk,keymap";
 
-                default_layer {
-                        display-name = "Base";
+        default_layer {
+            display-name = "Base";
 
-// --------------------------------------------------------------------------------
-// | ESC  |  Q  |  W  |  F  |  P  |  G  |   |  J  |  L   |  U  |  Y  |  '  | BSPC |
-// | TAB  |  A  |  R  |  S  |  T  |  D  |   |  H  |  N   |  E  |  I  |  O  | ENT  |
-// | CAPS |  Z  |  X  |  C  |  V  |  B  |   |  K  |  M   |  ,  |  .  |  /  | DEL  |
-//                    |     | NAV | MOU |   | SYM | NUM  | FUN |
+            // --------------------------------------------------------------------------------
+            // | ESC  |  Q  |  W  |  F  |  P  |  G  |   |  J  |  L   |  U  |  Y  |  '  | BSPC |
+            // | TAB  |  A  |  R  |  S  |  T  |  D  |   |  H  |  N   |  E  |  I  |  O  | ENT  |
+            // | CAPS |  Z  |  X  |  C  |  V  |  B  |   |  K  |  M   |  ,  |  .  |  /  | DEL  |
+            //                    |     | NAV | MOU |   | SYM | NUM  | FUN |
 
-                        bindings = <
-   &kp ESC   &kp Q      &kp W      &kp F       &kp P       &kp G                  &kp J           &kp L           &kp U        &kp Y      &kp SQT      &kp BSPC
-   &kp TAB   &mt LGUI A &mt LALT R &mt LCTRL S &mt LSHFT T &kp D                  &kp H           &mt LSHFT N     &mt LCTRL E  &mt LALT I  &mt LGUI O  &kp ENTER
-   &kp CAPS  &kp Z      &kp X      &kp C       &kp V       &kp B                  &kp K           &kp M           &kp COMMA    &kp DOT    &kp FSLH     &kp DEL
-                                   &none       &mo L_NAV   &lt L_MSE SPACE        &lt L_SYM SPACE &mo L_NUM       &mo L_FUN
-                        >;
-                };
-
-                numeric_layer {
-                        display-name = "Numeric";
-// -------------------------------------------------------------------------------------
-// |      |  [  |  7  |  8  |  9  |  ]  |   |     |       |       |      |      |      |
-// |      |  ;  |  4  |  5  |  6  |  =  |   |     | LSHFT | LCTRL | LALT | LGUI |      |
-// |      |  \  |  1  |  2  |  3  |  -  |   |     |       |       |      |      |      |
-//                    |  `  |  9  |  0  |   |     |       |       |
-
-                        bindings = <
-   &trans &kp LBKT   &kp N7  &kp N8    &kp N9 &kp RBKT         &none &none     &none     &none   &none    &trans
-   &trans &kp SEMI   &kp N4  &kp N5    &kp N6 &kp EQUAL        &none &kp LSHFT &kp LCTRL &kp LALT &kp LGUI &trans
-   &trans &kp BSLH   &kp N1  &kp N2    &kp N3 &kp MINUS        &none &none     &none     &none   &none    &trans
-                             &kp GRAVE &kp N9 &kp N0           &none &none     &none
-                        >;
-                };
-
-                symbol_layer {
-                        display-name = "Symbol";
-// -------------------------------------------------------------------------------------
-// |      |  {  |  &  |  *  |  (  |  }  |   |     |       |       |      |      |      |
-// |      |  :  |  $  |  %  |  ^  |  +  |   |     | LSHFT | LCTRL | LALT | LGUI |      |
-// |      |  |  |  !  |  @  |  @  |  #  |   |     |       |       |      |      |      |
-//                    |     |     |     |   |     |       |       |
-                        bindings = <
-   &trans &kp LBRC  &kp AMPS   &kp ASTRK   &kp LPAR  &kp RBRC        &none &none     &none      &none   &none    &trans
-   &trans &kp COLON &kp DOLLAR &kp PERCENT &kp CARET &kp PLUS        &none &kp LSHFT &kp LCTRL  &kp LALT &kp LGUI &trans
-   &trans &kp PIPE  &kp EXCL   &kp AT      &kp HASH  &kp UNDER       &none &none     &none      &none   &none    &trans
-                               &none       &none     &none           &none &none     &none
-                        >;
-                };
-                
-                 func_layer {
-                        display-name = "Function";
-
-// -------------------------------------------------------------------------------------
-// |      | F10 |  F7 |  F8 |  F9 |  %  |   |     |       |       |      |      |      |
-// |      | F11 |  F4 |  F5 |  F6 |     |   |     | LSHFT | LCTRL | LALT | LGUI |      |
-// |      | F12 |  F1 |  F2 |  F3 |     |   |     |       |       |      |      |      |
-//                    |     |     |     |   |     |       |       |
-
-                        bindings = <
-   &trans &kp F10  &kp F7 &kp F8 &kp F9 &none       &none &none     &none      &none    &none    &trans
-   &trans &kp F11  &kp F4 &kp F5 &kp F6 &none       &none &kp LSHFT &kp LCTRL  &kp LALT &kp LGUI &trans
-   &trans &kp F12  &kp F1 &kp F2 &kp F3 &none       &none &none     &none      &none    &none    &trans
-                          &none  &none  &none       &none &none     &none
-                        >;
-                };
-              
-                nav_layer {
-                        display-name = "Navigation";
-// -----------------------------------------------------------------------------------
-// |      |       |       |      |      | PSCRN |   | pup  | cpy | up  | pst |   |   |
-// |      | LSHFT | LCTRL | LALT | LGUI |       |   | cut  | lft | dwn | rgt |   |   |  
-// |      |       |       |      |      |       |   | pdn  | hme | und | end |   |   |
-//                        |      |      |       |   |      |     |     |
-
-                        bindings = <
-   &trans &none    &none    &none     &none     &kp PSCRN      &kp PG_UP  &kp K_COPY &kp UP     &kp K_PASTE &none &trans
-   &trans &kp LGUI &kp LALT &kp LCTRL &kp LSHFT &none          &kp K_CUT  &kp LEFT   &kp DOWN   &kp RIGHT   &none &trans
-   &trans &none    &none    &none     &none     &none          &kp PG_DN  &kp HOME   &kp K_UNDO &kp END     &none &trans
-                            &none     &none     &none          &none      &none      &none
-                        >;
-                };
-               
-                mouse_layer {
-                        display-name = "Mouse";
-// ----------------------------------------------------------------------------------------------------
-// | bt clr n | bt 0  | bt 1  | bt 2 | bt 3 | bt 4 |   | scup | mb1  | mup  | mb2  |     | reset      |
-// | out ble  | LSHFT | LCTRL | LALT | LGUI |      |   | scdn | mlft | mdwn | mrgt |     |            |
-// | out usb  |       |       |      |      |      |   |      |      |      |      |     | bootloader |
-//                            |      |      |      |   |      |      |      |
-
-                        bindings = <
-   &bt BT_CLR       &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4      &msc UP    &mkp MB1         &mmv MOVE_UP     &mkp MB2          &none &sys_reset
-   &out OUT_BLE     &kp LGUI     &kp LALT     &kp LCTRL    &kp LSHFT    &none             &msc DOWN  &mmv MOVE_LEFT   &mmv MOVE_DOWN   &mmv MOVE_RIGHT   &none &trans
-   &out OUT_USB     &none        &none        &none        &none        &none             &none      &none            &none            &none             &none &bootloader
-                                              &none        &none        &none             &none      &none            &none
-                        >;
-                };
+            bindings = <
+&kp ESC   &kp Q       &kp W       &kp F        &kp P        &kp G              &kp J            &kp L        &kp U        &kp Y       &kp SQT     &kp BSPC
+&kp TAB   &mt LGUI A  &mt LALT R  &mt LCTRL S  &mt LSHFT T  &kp D              &kp H            &mt LSHFT N  &mt LCTRL E  &mt LALT I  &mt LGUI O  &kp ENTER
+&kp CAPS  &kp Z       &kp X       &kp C        &kp V        &kp B              &kp K            &kp M        &kp COMMA    &kp DOT     &kp FSLH    &kp DEL
+                                  &none        &mo L_NAV    &lt L_MSE SPACE    &lt L_SYM SPACE  &mo L_NUM    &mo L_FUN
+            >;
         };
+
+        numeric_layer {
+            display-name = "Numeric";
+
+            // -------------------------------------------------------------------------------------
+            // |      |  [  |  7  |  8  |  9  |  ]  |   |     |       |       |      |      |      |
+            // |      |  ;  |  4  |  5  |  6  |  =  |   |     | LSHFT | LCTRL | LALT | LGUI |      |
+            // |      |  \  |  1  |  2  |  3  |  -  |   |     |       |       |      |      |      |
+            //                    |  `  |  9  |  0  |   |     |       |       |
+
+            bindings = <
+&trans  &kp LBKT  &kp N7  &kp N8     &kp N9  &kp RBKT     &none  &none      &none      &none     &none     &trans
+&trans  &kp SEMI  &kp N4  &kp N5     &kp N6  &kp EQUAL    &none  &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI  &trans
+&trans  &kp BSLH  &kp N1  &kp N2     &kp N3  &kp MINUS    &none  &none      &none      &none     &none     &trans
+                          &kp GRAVE  &kp N9  &kp N0       &none  &none      &none
+            >;
+        };
+
+        symbol_layer {
+            display-name = "Symbol";
+
+            // -------------------------------------------------------------------------------------
+            // |      |  {  |  &  |  *  |  (  |  }  |   |     |       |       |      |      |      |
+            // |      |  :  |  $  |  %  |  ^  |  +  |   |     | LSHFT | LCTRL | LALT | LGUI |      |
+            // |      |  |  |  !  |  @  |  @  |  #  |   |     |       |       |      |      |      |
+            //                    |     |     |     |   |     |       |       |
+
+            bindings = <
+&trans  &kp LBRC   &kp AMPS    &kp ASTRK    &kp LPAR   &kp RBRC     &none  &none      &none      &none     &none     &trans
+&trans  &kp COLON  &kp DOLLAR  &kp PERCENT  &kp CARET  &kp PLUS     &none  &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI  &trans
+&trans  &kp PIPE   &kp EXCL    &kp AT       &kp HASH   &kp UNDER    &none  &none      &none      &none     &none     &trans
+                               &kp TILDE    &kp LPAR   &kp RPAR     &none  &none      &none
+            >;
+        };
+
+        func_layer {
+            display-name = "Function";
+
+            // -------------------------------------------------------------------------------------
+            // |      | F10 |  F7 |  F8 |  F9 |  %  |   |     |       |       |      |      |      |
+            // |      | F11 |  F4 |  F5 |  F6 |     |   |     | LSHFT | LCTRL | LALT | LGUI |      |
+            // |      | F12 |  F1 |  F2 |  F3 |     |   |     |       |       |      |      |      |
+            //                    |     |     |     |   |     |       |       |
+
+            bindings = <
+&trans  &kp F10  &kp F7  &kp F8  &kp F9  &none    &none  &none      &none      &none     &none     &trans
+&trans  &kp F11  &kp F4  &kp F5  &kp F6  &none    &none  &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI  &trans
+&trans  &kp F12  &kp F1  &kp F2  &kp F3  &none    &none  &none      &none      &none     &none     &trans
+                         &none   &none   &none    &none  &none      &none
+            >;
+        };
+
+        nav_layer {
+            display-name = "Navigation";
+
+            // -----------------------------------------------------------------------------------
+            // |      |       |       |      |      | PSCRN |   | pup  | cpy | up  | pst |   |   |
+            // |      | LSHFT | LCTRL | LALT | LGUI |       |   | cut  | lft | dwn | rgt |   |   |  
+            // |      |       |       |      |      |       |   | pdn  | hme | und | end |   |   |
+            //                        |      |      |       |   |      |     |     |
+
+            bindings = <
+&trans  &none     &none     &none      &none      &kp PSCRN    &kp PG_UP  &kp K_COPY  &kp UP      &kp K_PASTE  &none  &trans
+&trans  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none        &kp K_CUT  &kp LEFT    &kp DOWN    &kp RIGHT    &none  &trans
+&trans  &none     &none     &none      &none      &none        &kp PG_DN  &kp HOME    &kp K_UNDO  &kp END      &none  &trans
+                            &none      &none      &none        &none      &none       &none
+            >;
+        };
+
+        mouse_layer {
+            display-name = "Mouse";
+
+            // ----------------------------------------------------------------------------------------------------
+            // | bt clr n | bt 0  | bt 1  | bt 2 | bt 3 | bt 4 |   | scup | mb1  | mup  | mb2  |     | reset      |
+            // | out ble  | LSHFT | LCTRL | LALT | LGUI |      |   | scdn | mlft | mdwn | mrgt |     |            |
+            // | out usb  |       |       |      |      |      |   |      |      |      |      |     | bootloader |
+            //                            |      |      |      |   |      |      |      |
+
+            bindings = <
+&bt BT_CLR    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &msc UP    &mkp MB1        &mmv MOVE_UP    &mkp MB2         &none  &sys_reset
+&out OUT_BLE  &kp LGUI      &kp LALT      &kp LCTRL     &kp LSHFT     &none           &msc DOWN  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none  &trans
+&out OUT_USB  &none         &none         &none         &none         &none           &none      &none           &none           &none            &none  &bootloader
+                                          &none         &none         &none           &none      &none           &none
+            >;
+        };
+    };
 };
